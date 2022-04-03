@@ -1,19 +1,20 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
-// self or public
-global.self = false //jadiin true klo gk mau fitur bot lu di pke sama org lain
-global.anticall = false
-global.anti_delete = false
+global.self = false 
+global.anticall = true
+global.anti_delete = true
 
-// setting
 global.ownername ="RifaiChump"
 global.ownernumber = "6289501564737"
 global.botname = "Rifai-BoT"
-global.thumbnail = fs.readFileSync("./settings/rifai.jpg") //sesuaikan dengan nama foto
+global.thumbnail = fs.readFileSync("./settings/rifai.jpg") 
 global.background = "https://telegra.ph/file/c50321dd75b720ceaf68f.jpg"
-global.lolkey = 'e966d3aac613b61dabd35cc6' //register lolhuman.xyz klo mau apikey
-global.zenzkey = '8423e19c13' //register zenzapi.xyz klo mau apikey
+global.mzstore = fs.readFileSync("./settings/mz.jpg")
+global.mlstore = fs.readFileSync("./settings/ml.jpg")
+global.jokistore = fs.readFileSync("./settings/room.jpg")
+global.lolkey = 'e966d3aac613b61dabd35cc6'
+global.zenzkey = '8423e19c13' 
 global.limit = {
 		free:30,
 		premium:1000
