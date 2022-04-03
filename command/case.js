@@ -371,16 +371,32 @@ module.exports = haruka = async (haruka, mek) => {
 		if (!mek.key.fromMe && global.self === true) return
 //colong aja bang, ingat jgn asal colong ntr sc lu error
 switch (command) {
-case 'menu': case 'help': case 'haruka':
-if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button dibawah`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-				sendButLocation(from, lang.menu(prefix, salam, pushname), '© ' + ownername, thumbnail, [{buttonId: '.owner', buttonText: {displayText: 'Owner'}, type: 1},{buttonId: '.infobot', buttonText:{displayText: 'Infobot'}, type: 1}], {quoted: mek})
+case 'menu': case 'help':
+				sendButLocation(from, lang.menu(prefix, salam, pushname, sender, time), '© ' + ownername, thumbnail, [{buttonId: '.owner', buttonText: {displayText: 'Owner'}, type: 1},{buttonId: '.infobot', buttonText:{displayText: 'Infobot'}, type: 1},{buttonId: '.shop', buttonText:{displayText: 'Shop'}, type: 1}], {quoted: mek})
 				break
+case 'shop':{
+  qris = await getBuffer(`https://i.ibb.co/2sn93ff/IMG-20220401-WA0098.jpg`)
+	haruka.sendMessage(from, qris, image, {quoted:mek, caption: 'Qris Pembayaran'});
+sendButLocation(from, lang.mzstore(prefix, pushname), '© ' + ownername, mzstore, [{buttonId: '.mllist', buttonText: {displayText: 'Topup ml'}, type: 1},{buttonId: '.jokilist', buttonText:{displayText: 'Jasa joki'}, type: 1},{buttonId: '.roomlist', buttonText:{displayText: 'Room turn'}, type: 1}], {quoted: mek})
+                }
+				break
+case 'mllist':{
+	var po = await getBuffer(`https://i.ibb.co/GJL0Zms/IMG-20220331-WA0000.jpg`)
+    haruka.sendMessage(from, po, image, { quoted: mek , caption: '© WingzeyaStore'})
+    }
+    break
+case 'jokilist':
+sendButMessage(from, lang.joki(prefix), '© ' + ownername, [{buttonId: '.shop', buttonText: {displayText: 'Shop'}, type: 1}], {quoted: mek})
+				break
+case 'roomlist':{
+	var po = await getBuffer(`https://i.ibb.co/x75D0Q0/IMG-20220330-WA0009.jpg`)
+    haruka.sendMessage(from, po, image, { quoted: mek , caption: '© WingzeyaStore'})
+    }
+    break
 case 'infobot':
-if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk dibawah`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 			reply('© By RifaiChump')
 break
 case 'owner':{
-	if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk dibawah`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 		const ownerContact = [ownernumber, "", "", "", "", "", "", "", "", "", "" , "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
 		let ini_list = []
 		for (let i of ownerContact.map(v => v + '@s.whatsapp.net')) {
