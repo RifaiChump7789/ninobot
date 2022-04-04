@@ -382,7 +382,7 @@ sendButLocation(from, lang.mzstore(prefix, pushname), '© ' + ownername, mzstore
 				break
 case 'mllist':{
 	var po = await getBuffer(`https://i.ibb.co/GJL0Zms/IMG-20220331-WA0000.jpg`)
-    haruka.sendMessage(from, po, image, { quoted: mek , caption: '© WingzeyaStore'})
+    haruka.sendMessage(from, po, image, { quoted: mek , caption: '© ZenoStore'})
     }
     break
 case 'jokilist':
@@ -390,7 +390,7 @@ sendButMessage(from, lang.joki(prefix), '© ' + ownername, [{buttonId: '.shop', 
 				break
 case 'roomlist':{
 	var po = await getBuffer(`https://i.ibb.co/x75D0Q0/IMG-20220330-WA0009.jpg`)
-    haruka.sendMessage(from, po, image, { quoted: mek , caption: '© WingzeyaStore'})
+    haruka.sendMessage(from, po, image, { quoted: mek , caption: '© ZenoStore'})
     }
     break
 case 'infobot':
